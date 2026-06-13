@@ -1,0 +1,213 @@
+/* Import Modern, Premium Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap');
+
+:root {
+    --bg-color: #faf8f5;        /* Soft, warm off-white background */
+    --text-color: #2b2b2b;      /* Dark charcoal for excellent readability */
+    --primary-color: #d94f36;   /* Rich warm terracotta red for key accents */
+    --primary-hover: #b83d27;   /* Darker red for hovers */
+    --accent-bg: #f5eae6;       /* Soft warm tint for highlights */
+    --card-bg: #ffffff;         /* Pure white for the content card */
+    --shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+    --border-color: #eae1d8;    /* Muted separator borders */
+    --border-radius: 16px;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+    --font-serif: 'Playfair Display', serif;
+}
+
+/* Base resets & styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-sans);
+    line-height: 1.65;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Container for main content */
+.container {
+    max-width: 680px;
+    width: 100%;
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+/* Typography styling */
+h1 {
+    font-family: var(--font-serif);
+    font-size: 2.6rem;
+    color: #1a1a1a;
+    margin-top: 0;
+    margin-bottom: 24px;
+    line-height: 1.2;
+}
+
+h2 {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    color: #1a1a1a;
+    margin-top: 36px;
+    margin-bottom: 16px;
+    border-bottom: 2px solid var(--accent-bg);
+    padding-bottom: 8px;
+}
+
+h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-top: 24px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+p {
+    font-size: 1.05rem;
+    color: #555555;
+    margin-bottom: 24px;
+}
+
+/* Custom interactive navigation links */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.back-link:hover {
+    color: var(--primary-hover);
+    transform: translateX(-4px);
+}
+
+.back-link::before {
+    content: '←';
+    margin-right: 8px;
+    font-size: 1.2rem;
+    line-height: 0;
+}
+
+/* Recipe image styling */
+.recipe-img {
+    width: 100%;
+    height: auto;
+    max-height: 380px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease;
+}
+
+.recipe-img:hover {
+    transform: scale(1.01);
+}
+
+/* List styles */
+ul {
+    list-style-type: none; /* remove standard bullet points to use custom ones */
+    padding-left: 0;
+    margin-bottom: 28px;
+}
+
+ul li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+    color: #444444;
+}
+
+/* Custom beautiful bullet point for lists */
+ul li::before {
+    content: '•';
+    color: var(--primary-color);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    position: absolute;
+    left: 8px;
+}
+
+/* Ordered list for steps */
+ol {
+    padding-left: 24px;
+    margin-bottom: 28px;
+}
+
+ol li {
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+    color: #444444;
+    line-height: 1.7;
+}
+
+ol li strong {
+    color: #1a1a1a;
+    display: block;
+    margin-bottom: 4px;
+    font-size: 1.1rem;
+}
+
+/* Refactored, professional highlight class replacing '.yo' */
+.highlight-ingredient {
+    background-color: var(--accent-bg);
+    color: var(--primary-color);
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 6px;
+    border: 1px dashed rgba(217, 79, 54, 0.2);
+}
+
+/* Homepage navigation styling */
+.recipe-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.recipe-list li {
+    padding-left: 0;
+    margin-bottom: 16px;
+}
+
+.recipe-list li::before {
+    display: none; /* Hide bullets on homepage list */
+}
+
+.recipe-list a {
+    display: block;
+    padding: 16px 20px;
+    background-color: #fcfcfc;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.recipe-list a:hover {
+    background-color: var(--accent-bg);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(217, 79, 54, 0.05);
+}
